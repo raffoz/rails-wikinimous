@@ -1,0 +1,18 @@
+<div class="container">
+  <p style="text-align: right;">
+    <%= link_to "New article", new_article_path %>
+  </p>
+  <ul>
+    <li class="article-item">
+      <% @articles.reverse.each do |article| %>
+        <h1>
+          <%= link_to article.title, article_path(article) %>
+        </h1>
+
+        <p>
+          <%= article.content %>
+        </p>
+      <% end %>
+    </li>
+  </ul>
+</div>
