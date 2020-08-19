@@ -1,11 +1,16 @@
 <div class="container">
   <h1>
     <%= @article.title %>
-    <%= link_to "edit", edit_article_path %>
-    <%= link_to "delete",
-            article_path(@article),
+
+    <%= link_to edit_article_path(@article) do %>
+      <i class="far fa-edit fa-xs"></i>
+    <% end %>
+
+    <%= link_to article_path(@article),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
+            data: { confirm: "Are you sure?" } do %>
+              <i class="far fa-trash-alt fa-xs"></i>
+            <% end %>
   </h1>
   <p>
     <%= @article.content %>
